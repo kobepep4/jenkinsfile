@@ -1,20 +1,21 @@
+
 pipeline{
     agent any
     stages{
         stage("buld"){
             steps{
-                echo "building..."
+                echo "Maven tool is available"
             }
-            
+           
         }
         stage("Test"){
             steps{
-                echo "Testing..."
+                echo "JUnit testing is available."
             }
         }
         stage("Deploy"){
             steps{
-                echo "Deploying..."
+                echo "Docker is available"
             }
         }
         stage("Complete"){
@@ -24,3 +25,4 @@ pipeline{
         }
     }
 }
+
