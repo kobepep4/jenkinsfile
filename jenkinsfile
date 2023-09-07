@@ -6,7 +6,13 @@ pipeline{
             steps{
                 echo "Maven tool is available"
             }
-           
+            post{
+                success{
+                    mail to: "alivezole@gmail.com",
+                    subject: "Building status Email",
+                    body: "Build log attached"
+                }
+            }
         }
         stage("Test"){
             steps{
@@ -25,4 +31,5 @@ pipeline{
         }
     }
 }
+
 
