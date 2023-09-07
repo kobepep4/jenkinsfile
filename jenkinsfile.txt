@@ -1,0 +1,28 @@
+
+pipeline{
+    agent any
+    stages{
+        stage("buld"){
+            steps{
+                echo "building..."
+            }
+            post{
+                always{
+                    mail to: "alivezole@gmail.com",
+                    subject: "Building status Email",
+                    body: "Build log attached"
+                }
+            }
+        }
+        stage("Test"){
+            steps{
+                echo "Testing..."
+            }
+        }
+        stage("Deploy"){
+            steps{
+                echo "Deploying..."
+            }
+        }
+    }
+}
